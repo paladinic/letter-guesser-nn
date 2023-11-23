@@ -2,6 +2,8 @@
 
 # Letter Guesser Web App
 
+<img width="444" alt="image" src="https://github.com/linea-analytics/letter-guesser-nn/assets/25911312/4ea4f279-bfa6-4511-9313-f6680839ce35">
+
 ## Overview
 
 The Letter Guesser Web App is an open-source static web application that uses a TensorFlow.js model to predict letters drawn by users on a canvas. It's designed to be simple, user-friendly, and accessible to anyone interested in machine learning and web development.
