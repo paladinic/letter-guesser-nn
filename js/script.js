@@ -1,4 +1,4 @@
-import * as tf from '@tensorflow/tfjs';
+// import * as tf from '@tensorflow/tfjs';
 
 const canvas = document.getElementById('drawingCanvas');
 const ctx = canvas.getContext('2d', { willReadFrequently: true });
@@ -45,7 +45,7 @@ async function predictCanvas() {
   }
 
   // Load the model
-  const model = await tf.loadLayersModel('./assets/model/model.json');
+  const model = await tf.loadLayersModel('../assets/model/model.json');
 
   // Convert the flattened array into a tensor using TensorFlow.js
   const tensor = tf.tensor4d(flattenedArray, [1, 28, 28, 1], 'float32');
