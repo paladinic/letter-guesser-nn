@@ -22,11 +22,9 @@ The web app utilizes a pre-trained TensorFlow.js neural network model to recogni
 - Internet connection (for the first-time model download).
 ### Local Setup
 - Clone the repository to your local machine.
-- Navigate to the project directory.
 - Open the index.html file in a web browser to start using the app.
 ```
-git clone ...
-cd ...
+git clone https://github.com/linea-analytics/letter-guesser-nn.git
 ```
 
 ## Hosting
@@ -45,8 +43,8 @@ Contributions are what make the open-source community such an amazing place to l
 
 ## Fork the Project
 - Create your Feature Branch (git checkout -b feature/AmazingFeature)
-- Commit your Changes (git commit -m 'Add some AmazingFeature')
-- Push to the Branch (git push origin feature/AmazingFeature)
+- Commit your changes (git commit -m 'Add some AmazingFeature')
+- Push to the branch (git push origin feature/AmazingFeature)
 - Open a Pull Request
 
 ## License
@@ -56,7 +54,7 @@ Distributed under the MIT License. See LICENSE for more information.
 Your Name - info@linea-analytics.com
 
 ## Project Link 
-https://github.com/your-username/letter-guesser-web-app
+[https://github.com/your-username/letter-guesser-web-app](https://linea-analytics.github.io/letter-guesser-nn/)https://linea-analytics.github.io/letter-guesser-nn/
 
 ## Acknowledgements
 - TensorFlow.js
