@@ -56,7 +56,7 @@ Distributed under the MIT License. See LICENSE for more information.
 Your Name - info@linea-analytics.com
 
 ## Project Link 
-[https://github.com/your-username/letter-guesser-web-app](https://linea-analytics.github.io/letter-guesser-nn/)https://linea-analytics.github.io/letter-guesser-nn/
+[https://github.com/your-username/letter-guesser-web-app](https://linea-analytics.github.io/letter-guesser-nn/)
 
 ## Acknowledgements
 - TensorFlow.js
