@@ -53,10 +53,10 @@ Contributions are what make the open-source community such an amazing place to l
 Distributed under the MIT License. See LICENSE for more information.
 
 ## Contact
-Your Name - info@linea-analytics.com
+info@linea-analytics.com
 
-## Project Link 
-[https://github.com/your-username/letter-guesser-web-app](https://linea-analytics.github.io/letter-guesser-nn/)
+## Project Link
+[live app](https://paladinic.github.io/letter-guesser-nn/)
 
 ## Acknowledgements
 - TensorFlow.js
