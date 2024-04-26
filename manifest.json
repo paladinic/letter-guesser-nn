@@ -1,0 +1,21 @@
+{
+   "name": "Letter Guesser NN",
+   "short_name" : "LettaGessa",
+   "start_url": "index.html?utm_source=homescreen",
+   "scope" : "./",
+   "icons": [
+       {
+           "src": "./android-chrome-192x192.png",
+           "sizes": "192x192",
+           "type": "image/png"
+       },
+       {
+           "src": "./android-chrome-512x512.png",
+           "sizes": "512x512",
+           "type": "image/png"
+       }
+   ],
+   "theme_color": "#ffee00",
+   "background_color": "#ffee00",
+   "display": "standalone"
+}
