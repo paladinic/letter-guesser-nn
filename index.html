@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <meta name="theme-color" content="#31d53d" />
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-    <link rel= “manifest” href= “manifest.json” />
+    <link rel="manifest" href="/letter-guesser-nn/manifest.json">
   </head>
   <body>
     <canvas id="drawingCanvas" width="350" height="350"></canvas>
@@ -26,5 +26,13 @@
       PREDICTION: <span class="pred">_</span>
     </div>
     <script src="./js/script.js"></script>
+    <script>
+        if (navigator.serviceWorker) {
+          navigator.serviceWorker.register (
+            '/colour-palette-test-app/sw.js',
+            {scope: '/colour-palette-test-app/'}
+          )
+        }
+    </script>
   </body>
 </html>

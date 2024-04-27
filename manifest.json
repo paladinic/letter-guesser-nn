@@ -1,21 +1,21 @@
 {
-   "name": "Letter Guesser NN",
-   "short_name" : "LettaGessa",
-   "start_url": "index.html?utm_source=homescreen",
-   "scope" : "./",
-   "icons": [
-       {
-           "src": "./android-chrome-192x192.png",
-           "sizes": "192x192",
-           "type": "image/png"
-       },
-       {
-           "src": "./android-chrome-512x512.png",
-           "sizes": "512x512",
-           "type": "image/png"
-       }
-   ],
-   "theme_color": "#ffee00",
-   "background_color": "#ffee00",
-   "display": "standalone"
-}
+    "name": "Letter Guesser NN",
+    "short_name": "Letter Guesser",
+    "description": "A Basic Letter Guesser Nerural Net",
+   
+    "scope": "/letter-guesser-nn/",
+    "start_url": "/letter-guesser-nn/",
+   
+    "background_color": "rgb(172, 0, 0)",
+    "theme_color": "rgb(172, 0, 0)",
+   
+    "display": "fullscreen", 
+   
+    "icons": [
+        {
+          "src": "/letter-guesser-nn/assets/imgs/logo.png",
+          "type": "image/png",
+          "sizes": "700x700"
+        }
+    ]
+  }
