@@ -134,19 +134,26 @@ let probabilityChart = new Chart(chartCtx, {
       data: new Array(26).fill(0),
       backgroundColor: 'white',
       borderColor: 'white',
-      color: "white",
       borderWidth: 1
     }]
   },
   options: {
     scales: {
       y: {
-        beginAtZero: true
+        beginAtZero: true,
+        ticks: {
+          color: "white"
+        }
+      },
+      x: {
+        ticks: {
+          color: "white"
+        }
       }
     },
     plugins: {
       legend: {
-        display: false,
+        display: false
       }
     }
   }});

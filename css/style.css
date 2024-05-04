@@ -23,20 +23,17 @@ body {
   flex-direction: column;
 }
 
-.pred,
-button{
-  font-size: 5vw;
-  font-weight: 900;
-}
 input[type="number"]{
   width: 4.75rem;
 }
 
 button{
+  font-size: 5vw;
+  font-weight: 400;
   background-color: white;
   border: none;
-  width: 8rem;
-  height: 3rem;
+  width: 7rem;
+  height: 2rem;
   margin: auto;
 }
 
