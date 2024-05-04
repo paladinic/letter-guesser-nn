@@ -14,25 +14,39 @@
     <link rel="stylesheet" href="./css/style.css" />
     <meta name="theme-color" content="#31d53d" />
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link rel="manifest" href="/letter-guesser-nn/manifest.json">
   </head>
-  <body>
+  <body class="flex flex-column">
     <canvas id="drawingCanvas" width="350" height="350"></canvas>
+    <canvas id="probabilityChart" width="350" height="100"></canvas>
     <div class="btns">
       <button id="clearCanvas">CLEAR</button>
       <button id="predictCanvas">PREDICT</button>
     </div>
-    <div class="pred">
-      PREDICTION: <span class="pred">_</span>
+    <div>
+      <span class="white-text">PREDICTION: <span class="white-text pred">_</span></span>
+    </div>
+    <div class="flex flex-column">
+      <button id="wrongBtn">WRONG</button>
+      <input type="text" id="correctAnswer" placeholder="Enter correct letter" />
+      <div class="flex flex-row">
+        <span class="white-text">MULTIPLIER</span>
+        <input type="number" id="retrainTimes" min="1" value="1" />
+      </div>
     </div>
     <script src="./js/script.js"></script>
     <script>
-        if (navigator.serviceWorker) {
-          navigator.serviceWorker.register (
-            '/colour-palette-test-app/sw.js',
-            {scope: '/colour-palette-test-app/'}
-          )
-        }
+            if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("sw.js")
+        .then((registration) => {
+            console.log("Service Worker registered with scope:", registration.scope);
+        })
+        .catch((error) => {
+            console.log("Service Worker registration failed:", error);
+        });
+    }
     </script>
   </body>
 </html>

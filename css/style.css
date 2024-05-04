@@ -1,34 +1,46 @@
 body {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
   align-items: center;
   height: 100vh;
   margin: 0;
   background-color: #ac0000;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 #drawingCanvas {
-  border: 2vh solid black; 
   background-color: white;
-  border-radius: 5%;
+}
+.flex{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flex-row{
+  flex-direction: row;
+  width: 8rem;
+}
+
+.flex-column{
+  flex-direction: column;
 }
 
 .pred,
 button{
   font-size: 5vw;
   font-weight: 900;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+input[type="number"]{
+  width: 4.75rem;
 }
 
 button{
-  border-radius: 5%;
-  width: 30vw;
-  height: 15vh;
+  background-color: white;
+  border: none;
+  width: 8rem;
+  height: 3rem;
   margin: auto;
 }
 
-.pred{
+.white-text{
   color: white;
 }
 span.pred{
