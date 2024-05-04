@@ -3,7 +3,8 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #ac0000;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 2rem;
 }
 
 #drawingCanvas {
@@ -14,26 +15,18 @@ body {
   justify-content: space-evenly;
 }
 
-.flex-row{
-  flex-direction: row;
-  width: 8rem;
-}
-
 .flex-column{
   flex-direction: column;
 }
 
-input[type="number"]{
-  width: 4.75rem;
-}
 
 button{
-  font-size: 5vw;
+  font-size: 2rem;
   font-weight: 400;
   background-color: white;
   border: none;
-  width: 7rem;
-  height: 2rem;
+  width: 10rem;
+  height: 3rem;
   margin: auto;
 }
 
