@@ -8,41 +8,53 @@
     content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="msapplication-tap-highlight" content="no" />
-
   <link rel="icon" type="image/x-icon" href="./assets/imgs/logo.png" />
   <link rel="stylesheet" href="./css/style.css" />
   <meta name="theme-color" content="#31d53d" />
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
   <link rel="manifest" href="/letter-guesser-nn/manifest.json">
 </head>
 
 <body class="flex flex-column">
-  <canvas id="drawingCanvas" width="350" height="350"></canvas>
-  <canvas id="probabilityChart" width="350" height="75"></canvas>
-  <div class="btns">
-    <button id="clearCanvas">CLEAR</button>
-    <button id="predictCanvas">PREDICT</button>
+  <canvas id="drawingCanvas" width="200" height="200"></canvas>
+  <div class="flex-row flex">
+    <canvas id="modelInputCanvas" width="50" height="50"></canvas>
+    <canvas id="probabilityChart" width="250" height="20"></canvas>
   </div>
-  <div>
-    <span class="white-text">PREDICTION: <span class="white-text pred">_</span></span>
+    <div class="flex-row flex">
+    <div class="flex flex-column">
+      <button id="clearCanvas">CLEAR</button>
+      <button id="wrongBtn">WRONG</button>
+    </div>
+    <div class="flex flex-column">
+      <span class="white-text">PREDICTION: <span class="black-text pred">_</span></span>
+      <input type="text" id="correctAnswer" placeholder="Enter correct letter" />
+    </div>
   </div>
-  <div class="flex flex-column">
-    <button id="wrongBtn">WRONG</button>
-    <input type="text" id="correctAnswer" placeholder="Enter correct letter" />
-    <span class="white-text">MULTIPLIER</span>
-    <input type="number" id="retrainTimes" min="1" value="1" />
+  <div class="flex-row flex">
+    <div class="flex-column flex">
+      <span class="white-text">EPOCHS</span>
+      <input type="number" id="epochs" min="1" value="1" />
+    </div>
+    <div class="flex-column flex">
+      <span class="white-text">L.RATE (1Ex)</span>
+      <input type="number" id="learnRate" min="-5" max="-1" value="-3" />
+    </div>
+    <div class="flex-column flex">
+      <span class="white-text">CLASS WEIGHT</span>
+      <input type="number" id="classWeight" min="20" max="10000" value="100" step="20" />
+    </div>
   </div>
   <script src="./js/script.js"></script>
   <script>
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("sw.js")
         .then((registration) => {
-          console.log("Service Worker registered with scope:", registration.scope);
+          alert("PWA Service Worker registered with scope:", registration.scope);
         })
         .catch((error) => {
-          console.log("Service Worker registration failed:", error);
+          alert("PWA Service Worker registration failed:", error);
         });
     }
   </script>
