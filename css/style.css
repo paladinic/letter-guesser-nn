@@ -39,6 +39,28 @@ canvas{
   color: black;
 }
 
+#loadingPanel {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1000; /* Make sure it covers other content */
+}
+
+#loadingPanel > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+
+
 #drawingCanvas {
   border: 2px solid black;
   background-color: white;

@@ -36,25 +36,36 @@ async function loadModel() {
 async function retrainModel(correctLabel, imageData) {
   const exponent = parseInt(document.getElementById('learnRate').value, 10);
   const classWeight = parseInt(document.getElementById('classWeight').value, 10);
+  
   const learningRate = Math.pow(10, exponent); // Convert exponent to actual learning rate
   const epochs = parseInt(document.getElementById('epochs').value, 10);
   const classWeights = { [correctLabel.charCodeAt(0) - 65]: classWeight };
 
-  const optimizer = tf.train.adam(learningRate);
-  model.compile({
-    optimizer: optimizer,
-    loss: 'categoricalCrossentropy',
-    metrics: ['accuracy']
-  });
+  try {
+    document.getElementById('loadingPanel').style.display = 'block'; // Show loading panel
+    model = await loadModel();
 
-  const tensor = tf.tensor4d(imageData, [1, 28, 28, 1], 'float32');
-  const labelIndex = correctLabel.charCodeAt(0) - 65;
-  const labelTensor = tf.oneHot([labelIndex], 26);
+    const optimizer = tf.train.adam(learningRate);
+    model.compile({
+      optimizer: optimizer,
+      loss: 'categoricalCrossentropy',
+      metrics: ['accuracy']
+    });
 
-  await model.fit(tensor, labelTensor, { epochs: epochs, classWeight: classWeights });
-  await model.save('indexeddb://my-updated-model');
-  console.log("Saved updated model to IndexedDB");
+    const tensor = tf.tensor4d(imageData, [1, 28, 28, 1], 'float32');
+    const labelIndex = correctLabel.charCodeAt(0) - 65;
+    const labelTensor = tf.oneHot([labelIndex], 26);
+
+    await model.fit(tensor, labelTensor, { epochs: epochs, classWeight: classWeights });
+    await model.save('indexeddb://my-updated-model');
+    console.log("Saved updated model to IndexedDB");
+  } catch (error) {
+    console.error("Retraining failed:", error);
+  } finally {
+    document.getElementById('loadingPanel').style.display = 'none'; // Hide loading panel
+  }
 }
+
 
 async function updateProbabilities() {
   if (!model) return;
