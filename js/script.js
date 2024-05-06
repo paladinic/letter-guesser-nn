@@ -35,11 +35,9 @@ async function loadModel() {
 
 async function retrainModel(correctLabel, imageData) {
   const exponent = parseInt(document.getElementById('learnRate').value, 10);
-  const classWeight = parseInt(document.getElementById('classWeight').value, 10);
   
   const learningRate = Math.pow(10, exponent); // Convert exponent to actual learning rate
   const epochs = parseInt(document.getElementById('epochs').value, 10);
-  const classWeights = { [correctLabel.charCodeAt(0) - 65]: classWeight };
 
   try {
     document.getElementById('loadingPanel').style.display = 'block'; // Show loading panel
@@ -56,7 +54,7 @@ async function retrainModel(correctLabel, imageData) {
     const labelIndex = correctLabel.charCodeAt(0) - 65;
     const labelTensor = tf.oneHot([labelIndex], 26);
 
-    await model.fit(tensor, labelTensor, { epochs: epochs, classWeight: classWeights });
+    await model.fit(tensor, labelTensor, { epochs: epochs });
     await model.save('indexeddb://my-updated-model');
     console.log("Saved updated model to IndexedDB");
   } catch (error) {
@@ -172,6 +170,7 @@ function clearCanvas() {
   modelInputCtx.clearRect(0, 0, modelInputCanvas.width, modelInputCanvas.height);
   probabilityChart.data.datasets[0].data = new Array(26).fill(0);
   probabilityChart.update();
+  correctAnswerInput.value = "";
   document.querySelector('span.pred').innerText = '_';
 }
 
